@@ -1,6 +1,7 @@
 import com.jogamp.opengl.GL4bc;
 import com.jogamp.opengl.GLAutoDrawable;
 import com.jogamp.opengl.GLEventListener;
+import com.jogamp.opengl.fixedfunc.GLMatrixFunc;
 
 public class EventListener implements GLEventListener {
 
@@ -45,6 +46,7 @@ public class EventListener implements GLEventListener {
         gl.glMatrixMode(GL4bc.GL_PROJECTION);
         gl.glLoadIdentity();
 
-        
+        gl.glOrtho(0, 3, 0, 3, -1, 1);
+        gl.glMatrixMode(GL4bc.GL_MODELVIEW);
     }
 }

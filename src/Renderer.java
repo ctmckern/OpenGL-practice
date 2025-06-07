@@ -20,8 +20,8 @@ public class Renderer {
         window.setSize(640, 360);
         window.addGLEventListener(new EventListener());
 
-        //FPSAnimator animator = new FPSAnimator(window, 60);
-        //animator.start();
+        FPSAnimator animator = new FPSAnimator(window, 60);
+        animator.start();
         window.setResizable(false);
         window.setVisible(true);
     }
