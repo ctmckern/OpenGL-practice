@@ -10,7 +10,7 @@ public class EventListener implements GLEventListener {
         //called once on startup
         GL4bc gl = glAutoDrawable.getGL().getGL4bc();
         //What color the screen is when clearing the frame, in this case black
-        gl.glClearColor(0f, 0f, 0f, 1);
+        gl.glClearColor(0f, 0f, 0f, 0.5f);
         //This clears the color buffer(note self: look into color buffers, is it just a buffer for color data?)
 
     }
@@ -29,10 +29,10 @@ public class EventListener implements GLEventListener {
         gl.glColor3f(0, 0, 1);
 
         gl.glBegin(GL4bc.GL_QUADS);
-            gl.glVertex2f(-0.5f, -0.5f);
-            gl.glVertex2f(0.5f, -0.5f);
-            gl.glVertex2f(-0.5f, 0.5f);
-            gl.glVertex2f(0.5f, 0.5f);
+            gl.glVertex2f(-50, -50f);
+            gl.glVertex2f(-50f, 50f);
+            gl.glVertex2f(50f, 50f);
+            gl.glVertex2f(50f, -50f);
         gl.glEnd();
 
         //called every frame, most coding for this class is here
@@ -46,7 +46,8 @@ public class EventListener implements GLEventListener {
         gl.glMatrixMode(GL4bc.GL_PROJECTION);
         gl.glLoadIdentity();
 
-        gl.glOrtho(0, 3, 0, 3, -1, 1);
+        float unitsTall = Renderer.getWindowHeight()/(Renderer.getWindowWidth()/Renderer.unitsWide);
+        gl.glOrtho(-Renderer.unitsWide/2, Renderer.unitsWide/2,-unitsTall, unitsTall, -1, 1);
         gl.glMatrixMode(GL4bc.GL_MODELVIEW);
     }
 }
