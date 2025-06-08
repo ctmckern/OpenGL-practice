@@ -38,7 +38,6 @@ public class EventListener implements GLEventListener {
 //            gl.glVertex2f(50f, -50f);
 //        gl.glEnd();
 
-        //called every frame, most coding for this class is here
     }
 
     @Override
